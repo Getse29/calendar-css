@@ -1,0 +1,32 @@
+@mixin contentCenter {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+@mixin boxShadowCalendar {
+  -webkit-box-shadow: -13px 21px 55px -12px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -13px 21px 55px -12px rgba(0, 0, 0, 0.75);
+  box-shadow: -13px 21px 55px -12px rgba(0, 0, 0, 0.75);
+}
+
+@mixin phone {
+  @media (min-width: 577px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop-max {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
