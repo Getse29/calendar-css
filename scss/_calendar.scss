@@ -4,71 +4,103 @@
 
 .calendar-days {
   @include boxShadowCalendar;
-  padding: 20px;
+  padding: 2rem;
   background-color: #fff;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include phone {
+    flex-direction: column;
+  }
   @include desktop {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    width: 100%;
   }
-  @include desktop-max {
-    width: 45%;
+
+  @include tablet {
+    flex-direction: column;
   }
 }
 
 .calendar-days__date {
   max-width: 100%;
-  @include desktop {
-    width: 45%;
-  }
-  margin-top: 30px;
-  margin-right: 20px;
-  margin-left: 20px;
-  margin-bottom: 60px;
+  margin: 3rem 2rem;
   @include desktop {
     margin-bottom: 0;
+    width: 45%;
+  }
+
+  @include tablet {
+    margin: 0 auto;
   }
 }
 
 .days {
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
 }
 
 .days__title {
   font-weight: $fw-300;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
 }
 
 .days__content,
-.numbers {
+.numbers__content {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-gap: 1em;
+  text-align: center;
   margin: 0 auto;
   max-width: 100%;
 }
 
 .numbers {
-  margin-top: 30px;
+  margin-top: 3rem;
 }
 
 .numbers__number {
-  margin-bottom: 20px;
+  padding: 1.5rem;
 }
+
+.active:hover {
+  /* border: 1px solid $colorPrimary; */
+  background-color: $colorPrimary;
+  color: white;
+  border-radius: 100%;
+  padding: 1.5rem 0;
+  cursor: pointer;
+}
+
+/* .active:hover {
+
+} */
 
 .numbers__last-month {
   color: $grayDate;
 }
 
 .calendar-image {
-  max-width: 100%;
   @include desktop {
     width: 55%;
+  }
+
+  @include tablet {
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+.new-task-date {
+  @include desktop {
+    position: absolute;
+    bottom: 40%;
+    left: 40%;
+    h3 {
+      text-align: center;
+      font-weight: $fw-900;
+    }
   }
 }
